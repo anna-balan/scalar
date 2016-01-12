@@ -601,7 +601,7 @@ a:hover, li>a:hover{
     height: 0;
     }
 .ba-footer {
-	padding: 40px 0 30px;
+	padding: 40px 0;
 	background: #F5F5F5;
 	text-align: center;
 }
@@ -617,24 +617,37 @@ a:hover, li>a:hover{
 	position: relative;
 }
 
-.ba-social a:after {
-	transform: rotate(45deg);
-	content: "";
-	display: table;
-	position: absolute;
-	background: rgba(144, 144, 144, 0.2);
-	width: 44px;
-	height: 44px;
-	top: -11px;
-	left: -13px;
-}
-.ba-social a:hover{
-	color: #fff;
-}
-.ba-social a:hover::after {
-	background-color: #F06862;
+.ba-social--icon:before{
+	position: relative;
+	z-index:100;
 }
 
+.ba-social--icon{
+top:50%;
+width:45px;
+text-align: inherit;
+font-size: 20px;
+line-height:45px;
+color:#A5A5a5;
+}
+.ba-social--icon:after {
+content: "";
+display: block;
+background: rgba(144, 144, 144, 0.2);
+width:45px;
+height:45px;
+top:0;
+left:0;
+transform: rotate(45deg);
+position: absolute;
+z-index: 2;
+}
+.ba-social a:hover .ba-social--icon:after {
+background:rgb(240, 104, 98);
+}
+.ba-social--icon:hover{
+color:#FFFFFF;
+}
 .ba-copyright {
 	color: #7F7F7F;
 	font-size: 15px;
