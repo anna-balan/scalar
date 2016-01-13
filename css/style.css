@@ -72,37 +72,34 @@ textarea {
 
 /* Layout */
 .ba-container{
-	width: 100vw;
-	position: relative;
+	width: 960px;
 }
 
-.ba-logo > a{
-text-decoration: none;
-font-size: 18px;
-font-weight: 700;
-letter-spacing: 0.1em;
-line-height: 11px;
-vertical-align: middle;
-color:#fff;
-padding-left: 50px;
-}
-.ba-logo > a > i{
+.ba-logo > i{
 	color:#F06862;
 	padding-right: 5px;
 }
 .ba-logo{
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	line-height: 11px;
+	vertical-align: middle;
+	color:#fff;
+	margin-left: -20px;
 	margin:15px 0;
 }
 nav{
-	position: absolute;
-	right: 100px;
-	top: 10px;
+	padding-top: 20px;
 }
-.ba-header{
+.ba-header>.ba-container{
+	padding:0 5%;
 	background-color: #7F7E93;
 	position: fixed;
 	height: 70px;
 	z-index:2000;
+	width: 100%;
 	top: 0;
 }
 .ba-menu{
@@ -120,46 +117,58 @@ nav{
 	vertical-align: middle;
 	text-align: center;
 	height: 30px;
-	padding: 5px 0px 5px 13px;
-	margin-right: 4px;
+	margin-left: 10px;
 }
 .ba-menu > li:last-child{
-	padding-left: 0;
+	margin-left: 0;
 }
 
 .ba-menu li a {
-	padding: 0;
+	display: inline-block;
+	padding: 5px 10px;
 	text-decoration: none;
 	color:#fff;
-	padding-right: 15px;
-
 }
+
 .ba-submenu{
 	margin: 0;
     padding: 0;
     list-style: none;
     position:relative;
     width: 180px;
-    top: 50px;
-    left: -12px;
-    background-color: #7F7E93;
+    top: 100%;
+    left: 1.5%;
+    padding-top: 20px;
+    padding-bottom: 5px;
     z-index:2;
     transition: all .3s ease .15s;
+    display: block;
     opacity: 0;
     visibility: hidden;
-
 }
+
+.ba-submenu >li{
+	background-color: #7F7E93;
+}
+
+ul.ba-submenu li:nth-child(5){
+	border-bottom: 5px solid #7F7E93;
+}
+
 .ba-submenu li:last-child{
 	position: relative;
+	margin-bottom: 5px;
+	border-bottom: none;
 }
+
 .ba-submenu__low{
 	margin: 0;
     padding: 0;
     list-style: none;
     position:absolute;
     width: 150px;
-    left: 150px;
-    top: -2px;
+    left: 180px;
+    top: -5px;
     background-color: #7F7E93;
     display: none;
     z-index:2;
@@ -206,14 +215,13 @@ a:hover, li>a:hover{
 	padding-right: 0;
 }
 
-
 /*triangle in menu*/
 .ba-submenu:before{
 	content: '';
     position: absolute;
     border: 15px solid transparent;
     border-bottom: 15px solid #7F7E93;
-    top: -30px;
+    top: -11px;
     left:75px;
     margin-top: 1px;
 }
@@ -453,18 +461,16 @@ a:hover, li>a:hover{
 	width: 1px;
 }
 .tree.left:after {
-    left: 50%;
-    width: 156px;
-    margin-left: 10px;
-
+    left: 53%;
+    width: 50%;
 }
 .tree.central:after{
-	left: -10px;
-    width: 344px;
-    margin-left: 13px;
+	left: 3%;
+    width: 100%;
 }
 .tree.right:after{
-	width:153px;
+	left: 3%;
+	width:50%;
 }
 .tree:after {
     background: rgba(144, 144, 144, 0.25);
@@ -515,7 +521,7 @@ a:hover, li>a:hover{
 	font-weight: 400;
 	line-height: 26.4px;
 	position: relative;
-	padding: 10px 30px;
+	padding: 10px 20px;
 
 }
 .ba-users_card>blockquote:after{
@@ -523,8 +529,8 @@ a:hover, li>a:hover{
     position: absolute;
     border: 15px solid transparent;
     border-top: 15px solid #575767;
-    top: 97px;
-    left:167px;
+    top: 99%;
+    left:45%;
     margin-top: 1px;
 }
 .ba-users--img>img{
@@ -536,6 +542,12 @@ a:hover, li>a:hover{
 .ba-users--title{
 	color:rgb(203, 203, 211);
 	margin-top: 5px;
+}
+.ba-container__info{
+	width: 80%;
+}
+.ba-info__column{
+	padding-right: 5px;
 }
 .ba-info--content p, .ba-info--content h3{
 	color:red;
@@ -568,7 +580,7 @@ a:hover, li>a:hover{
 	width:inherit;
 	line-height: inherit;
 	position: absolute;
-	left: 8px;
+	left: 9px;
 	top: 0;
 }
 .ba-info--content {
@@ -582,6 +594,7 @@ a:hover, li>a:hover{
 	font-size: 20px;
 	font-weight: 700;
 	line-height: 30px;
+	white-space: nowrap;
 }
 .ba-info--content p{
 	color:rgb(134, 134, 134);
@@ -625,6 +638,7 @@ a:hover, li>a:hover{
 .ba-social--icon{
 top:50%;
 width:45px;
+height: 45px;
 text-align: inherit;
 font-size: 20px;
 line-height:45px;
@@ -636,7 +650,7 @@ display: block;
 background: rgba(144, 144, 144, 0.2);
 width:45px;
 height:45px;
-top:0;
+top:-7px;
 left:0;
 transform: rotate(45deg);
 position: absolute;
